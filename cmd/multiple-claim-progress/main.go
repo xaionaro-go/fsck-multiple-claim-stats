@@ -38,7 +38,7 @@ func main() {
 	fmt.Printf("inodes: %d/%d (%.1f%%)\n",
 		len(logs.CloneMultiplyClaimedBlocks),
 		len(logs.MultipleClaimedBlockInodes),
-		float64(len(logs.CloneMultiplyClaimedBlocks))/float64(len(logs.MultipleClaimedBlockInodes)),
+		100*float64(len(logs.CloneMultiplyClaimedBlocks))/float64(len(logs.MultipleClaimedBlockInodes)),
 	)
 
 	clonedBlocks, toBeClonedBlocks := uint(0), uint(0)
@@ -51,7 +51,7 @@ func main() {
 	fmt.Printf("blocks: %d/%d  (%.1f%%)\n",
 		clonedBlocks,
 		toBeClonedBlocks,
-		float64(clonedBlocks)/float64(toBeClonedBlocks),
+		100*float64(clonedBlocks)/float64(toBeClonedBlocks),
 	)
 	blockSize := uint(4096)
 	fmt.Printf("clone-size: %s/%s (assuming block-size is %d)\n",
